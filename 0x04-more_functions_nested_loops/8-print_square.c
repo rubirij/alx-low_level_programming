@@ -2,20 +2,25 @@
 #include <stdio.h>
 
 /**
- * print_square - draws a square using multiple terminal lines and #'s.
- * @n: the number of # to print in each line.
- * Return: 0
+ * print_square - prints squares
+ * @size: parameter
+ * Return: returns nothing
  */
+
 void print_square(int size)
 {
-	int i, j;
+	int inc1, inc2;
 
-	if (n > 0)
+	if (size > 0)
 	{
-		for (i = 0; i < n; i++)
+		for (inc1 = 0; incl1 < size; inc1++)
 		{
-			for (j = 0; j < n; j++)
+			for (inc2 = 0; inc2 < (size - 1); inc2++)
+			{
 				_putchar('#');
+			}
+
+			_putchar('#');
 			_putchar('\n');
 		}
 	}
