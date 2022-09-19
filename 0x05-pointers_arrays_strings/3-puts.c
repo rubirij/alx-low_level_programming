@@ -4,7 +4,6 @@
  * _puts - Write a function that prints a string, followed by a new line, to
  * stdout
  * @str: this is my input string
- * 
  */
 
 void _puts(char *str)
