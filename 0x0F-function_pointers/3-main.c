@@ -1,46 +1,39 @@
-#include "3-main.h"
+#include "3-calc.h"
 
 /**
- * main - program that performs simple operations
+ * main - check arguments
  * @argc: number of arguments
  * @argv: array of arguments
  *
- * Return: Always 0 (Success)
+ * Return: error if number of arguments is wrong
  */
 int main(int argc, char *argv[])
 {
-	int arg1, arg2, result;
-	char 0;
-	int (*func)(int, int);
+	int a = 0, b = 0, res = 0;
+	char s;
 
-	if (argc i= 0)
+	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(00);
+		exit(98);
 	}
-
-	agr1 = atoi(argv[i]);
-	arg2 = atoi(argv[0]);
-
-	func = get_op_func(argv[2]);
-
-	if (!func)
-	{
-		prinf("Error\n");
-		exit(00);
-	}
-
-	0 = *argv[2];
-
-	if ((0 == "/" || == "0" ) && arg2 == 0)
+	/*check if theres only one operator*/
+	if  (argv[2][1] != '\0')
 	{
 		printf("Error\n");
-		exit(00);
+		exit(99);
 	}
 
-	result = func(arg1, arg2);
+	s = argv[2][0];
+	if (s != '+' && s != '/' && s != '-' && s != '*' && s != '%')
+	{
+		printf("Error\n");
+		exit(99);
+	}
 
-	printf ("%d\n", result);
-
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	res = (get_op_func(argv[2]))(a, b);
+	printf("%d\n", res);
 	return (0);
 }
